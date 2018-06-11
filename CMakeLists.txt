@@ -137,6 +137,8 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/learning_image_geometry_node.cpp)
+add_executable(${PROJECT_NAME}_node src/draw_frames.cpp )
+
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -149,9 +151,9 @@ include_directories(
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(${PROJECT_NAME}_node
-#   ${catkin_LIBRARIES}
-#)
+target_link_libraries(${PROJECT_NAME}_node
+   ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##
@@ -200,6 +202,3 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-
-add_executable(draw_frames src/draw_frames.cpp)
-
